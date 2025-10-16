@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.NotificationSSH" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Dark color scheme -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryContainer">@color/primary_container_dark</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryContainer">@color/secondary_container_dark</item>
+        <item name="colorError">@color/error</item>
+
+        <item name="colorSurface">@color/surface_dark</item>
+        <item name="colorOnSurface">@color/on_surface_dark</item>
+        <item name="android:windowBackground">@color/background_dark</item>
+
+        <!-- Typography remains the same; Reddit Sans -->
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.NotificationSSH.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.NotificationSSH.BodyMedium</item>
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.NotificationSSH.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.NotificationSSH.TitleMedium</item>
+    </style>
+
+</resources>

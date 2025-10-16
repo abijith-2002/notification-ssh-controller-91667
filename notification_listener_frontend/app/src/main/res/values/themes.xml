@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme using Material3 -->
+    <style name="Theme.NotificationSSH" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Color scheme -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryContainer">@color/primary_container</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryContainer">@color/secondary_container</item>
+        <item name="colorError">@color/error</item>
+        <item name="android:statusBarColor">@color/surface</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+
+        <!-- Typography -->
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.NotificationSSH.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.NotificationSSH.BodyMedium</item>
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.NotificationSSH.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.NotificationSSH.TitleMedium</item>
+
+        <!-- Surfaces -->
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/on_surface</item>
+        <item name="android:windowBackground">@color/background</item>
+    </style>
+
+    <!-- Typography styles referencing Reddit Sans -->
+    <style name="TextAppearance.NotificationSSH.Base" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/reddit_sans</item>
+        <item name="android:fontFamily">@font/reddit_sans</item>
+        <item name="android:textColor">@color/on_surface</item>
+    </style>
+
+    <style name="TextAppearance.NotificationSSH.BodyLarge" parent="TextAppearance.NotificationSSH.Base">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAppearance.NotificationSSH.BodyMedium" parent="TextAppearance.NotificationSSH.Base">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextAppearance.NotificationSSH.TitleLarge" parent="TextAppearance.NotificationSSH.Base">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="TextAppearance.NotificationSSH.TitleMedium" parent="TextAppearance.NotificationSSH.Base">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+</resources>

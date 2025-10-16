@@ -19,12 +19,14 @@
         <activity
             android:name=".SettingsActivity"
             android:exported="false"
-            android:label="@string/settings_title" />
+            android:label="@string/settings_title"
+            android:theme="@style/Theme.NotificationSSH" />
 
         <activity
             android:name=".AppSelectionActivity"
             android:exported="false"
-            android:label="@string/app_selection_title" />
+            android:label="@string/app_selection_title"
+            android:theme="@style/Theme.NotificationSSH" />
 
         <!-- Notification Listener Service registration -->
         <service

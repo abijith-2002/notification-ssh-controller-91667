@@ -190,7 +190,7 @@ class PreferencesRepository private constructor(
     suspend fun setSelectedPackages(packages: Set<String>) {
         // Normalize: trim entries and remove blanks.
         val normalized = packages.mapNotNull { p ->
-            p?.trim()?.takeIf { it.isNotEmpty() }
+            p.trim().takeIf { it.isNotEmpty() }
         }.toSet()
         context.dataStore.edit { it[Keys.SELECTED_PACKAGES] = normalized }
     }

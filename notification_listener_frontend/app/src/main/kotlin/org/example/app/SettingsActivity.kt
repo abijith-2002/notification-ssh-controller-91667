@@ -8,7 +8,7 @@ import android.view.View
 import android.widget.*
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelStoreOwner
+import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -16,6 +16,7 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import kotlinx.coroutines.flow.first
 import org.example.app.data.PreferencesRepository
 import org.example.app.data.SecureStorage
@@ -53,12 +54,12 @@ class SettingsActivity : Activity() {
 
         // Initialize ViewModel using ViewModelProvider with custom Factory
         viewModel = ViewModelProvider(
-            this as ViewModelStoreOwner,
+            this as androidx.lifecycle.ViewModelStoreOwner,
             SettingsViewModel.Factory(
                 PreferencesRepository.getInstance(applicationContext),
                 SecureStorage.getInstance(applicationContext)
             )
-        ).get(SettingsViewModel::class.java)
+        )[SettingsViewModel::class.java]
 
         edtHost = findViewById(R.id.edtHost)
         edtPort = findViewById(R.id.edtPort)
@@ -198,7 +199,7 @@ class SettingsViewModel(
 
     init {
         // Load existing values
-        kotlinx.coroutines.GlobalScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(Dispatchers.IO) {
             try {
                 val sshCfg = prefs.sshConfigFlow.first()
                 val hasPwd = secure.getPassword()?.isNotEmpty() == true
@@ -212,11 +213,11 @@ class SettingsViewModel(
                     hasPassword = hasPwd
                 )
                 // Post to state on main
-                kotlinx.coroutines.withContext(Dispatchers.Main) {
+                withContext(Dispatchers.Main) {
                     _state.value = newState
                 }
             } catch (_: Throwable) {
-                kotlinx.coroutines.withContext(Dispatchers.Main) {
+                withContext(Dispatchers.Main) {
                     _state.value = UiState(loading = false)
                 }
             }
@@ -254,7 +255,7 @@ class SettingsViewModel(
         commandTemplate: String,
         onDone: (Boolean) -> Unit
     ) {
-        kotlinx.coroutines.GlobalScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(Dispatchers.IO) {
             var ok = true
             var hostErr: String? = null
             var portErr: String? = null
@@ -281,7 +282,7 @@ class SettingsViewModel(
             }
 
             // Switch to main to update state
-            kotlinx.coroutines.withContext(Dispatchers.Main) {
+            withContext(Dispatchers.Main) {
                 _state.value = _state.value.copy(
                     hostError = hostErr,
                     portError = portErr,
@@ -291,11 +292,11 @@ class SettingsViewModel(
             }
 
             if (!ok) {
-                kotlinx.coroutines.withContext(Dispatchers.Main) { onDone(false) }
+                withContext(Dispatchers.Main) { onDone(false) }
                 return@launch
             }
 
-            kotlinx.coroutines.withContext(Dispatchers.Main) { _state.value = _state.value.copy(loading = true) }
+            withContext(Dispatchers.Main) { _state.value = _state.value.copy(loading = true) }
             val resultSuccess = try {
                 // Persist preferences
                 prefs.setSshConfig(host, port, username, commandTemplate)
@@ -308,7 +309,7 @@ class SettingsViewModel(
                 false
             }
             val hasPwd = secure.getPassword()?.isNotEmpty() == true
-            kotlinx.coroutines.withContext(Dispatchers.Main) {
+            withContext(Dispatchers.Main) {
                 _state.value = _state.value.copy(loading = false, hasPassword = hasPwd)
                 onDone(resultSuccess)
             }
@@ -319,9 +320,9 @@ class SettingsViewModel(
      * Clears the stored password.
      */
     fun clearPassword(onDone: () -> Unit) {
-        kotlinx.coroutines.GlobalScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(Dispatchers.IO) {
             secure.clear()
-            kotlinx.coroutines.withContext(Dispatchers.Main) {
+            withContext(Dispatchers.Main) {
                 _state.value = _state.value.copy(hasPassword = false)
                 onDone()
             }

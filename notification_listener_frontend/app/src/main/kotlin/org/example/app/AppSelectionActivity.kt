@@ -14,6 +14,7 @@ import android.widget.*
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStoreOwner
+import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -49,12 +50,12 @@ class AppSelectionActivity : Activity() {
         setContentView(R.layout.activity_app_selection)
 
         viewModel = ViewModelProvider(
-            this as ViewModelStoreOwner,
+            this as androidx.lifecycle.ViewModelStoreOwner,
             AppSelectionViewModel.Factory(
                 applicationContext.packageManager,
                 PreferencesRepository.getInstance(applicationContext)
             )
-        ).get(AppSelectionViewModel::class.java)
+        )[AppSelectionViewModel::class.java]
 
         edtSearch = findViewById(R.id.edtSearch)
         btnClearSearch = findViewById(R.id.btnClearSearch)
@@ -137,11 +138,9 @@ class AppSelectionViewModel(
     private val _state = MutableStateFlow(UiState())
     val uiState: StateFlow<UiState> = _state
 
-    private val vmScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
-
     init {
-        // Load installed apps and initial selection
-        vmScope.launch {
+        // Load installed apps and initial selection tied to ViewModel lifecycle
+        viewModelScope.launch(Dispatchers.Default) {
             val initialSelected = prefs.selectedPackagesFlow.first()
             val apps = loadInstalledApps(initialSelected)
             withContext(Dispatchers.Main) {
@@ -206,7 +205,7 @@ class AppSelectionViewModel(
      * Persist the current selection atomically to PreferencesRepository.
      */
     suspend fun persistSelection(): Boolean = withContext(Dispatchers.IO) {
-        return@withContext try {
+        try {
             val current = _state.value.selectedPackages
             prefs.setSelectedPackages(current)
             true
@@ -278,6 +277,7 @@ private class AppsAdapter(
             if (row.icon != null) {
                 imgIcon.setImageDrawable(row.icon)
             } else {
+                imgIcon.setImageDrawable(null)
                 imgIcon.setImageResource(android.R.drawable.sym_def_app_icon)
             }
             // Avoid triggering listener when programmatically updating

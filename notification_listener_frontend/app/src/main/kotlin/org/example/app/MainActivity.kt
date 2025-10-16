@@ -185,10 +185,9 @@ class MainActivity : Activity() {
     }
 
     private fun openSettingsActivity() {
-        // Placeholder: navigate to settings screen if implemented; fall back to app details
+        // Navigate to SettingsActivity; fallback to app details if something goes wrong
         try {
-            val intent = Intent(this, Class.forName("org.example.app.SettingsActivity"))
-            startActivity(intent)
+            startActivity(Intent(this, SettingsActivity::class.java))
         } catch (_: Exception) {
             openAppDetails()
         }

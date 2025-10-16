@@ -46,4 +46,26 @@
     <!-- Incomplete configuration notice -->
     <string name="ssh_status_incomplete_title">SSH not configured</string>
     <string name="ssh_status_incomplete_body">Missing host, username, password, or template</string>
+
+    <!-- Settings -->
+    <string name="settings_title">SSH Settings</string>
+    <string name="settings_subtitle">Configure server connection and command template</string>
+    <string name="ssh_section_title">Server &amp; Authentication</string>
+    <string name="ssh_host">Host</string>
+    <string name="ssh_host_hint">e.g., 192.168.1.10 or server.local</string>
+    <string name="ssh_port">Port</string>
+    <string name="ssh_port_hint">22</string>
+    <string name="ssh_username">Username</string>
+    <string name="ssh_username_hint">e.g., ubuntu</string>
+    <string name="ssh_password">Password</string>
+    <string name="ssh_password_hint">Enter password (stored securely)</string>
+    <string name="clear_password">Clear</string>
+    <string name="password_saved_hint">Password saved securely</string>
+    <string name="password_not_set_hint">No password saved</string>
+    <string name="ssh_command_template">Command template</string>
+    <string name="ssh_command_template_hint">Supported placeholders: package | title | text | postTime</string>
+    <string name="save">Save</string>
+    <string name="settings_saved">Settings saved</string>
+    <string name="settings_save_failed">Failed to save settings</string>
+    <string name="password_cleared">Password cleared</string>
 </resources>

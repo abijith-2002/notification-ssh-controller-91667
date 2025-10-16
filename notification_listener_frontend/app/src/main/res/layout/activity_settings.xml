@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    tools:context=".SettingsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Header -->
+        <TextView
+            android:id="@+id/txtTitle"
+            style="@style/TextAppearance.NotificationSSH.TitleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_title"
+            android:textColor="?attr/colorOnSurface" />
+
+        <TextView
+            android:id="@+id/txtSubtitle"
+            style="@style/TextAppearance.NotificationSSH.BodyMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_subtitle"
+            android:textColor="?attr/colorOnSurface"
+            android:alpha="0.85"
+            android:layout_marginTop="4dp" />
+
+        <!-- SSH Config Card -->
+        <LinearLayout
+            android:id="@+id/cardSsh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="?attr/colorPrimaryContainer"
+            android:padding="16dp"
+            android:layout_marginTop="16dp"
+            android:elevation="2dp">
+
+            <TextView
+                android:id="@+id/txtSectionSsh"
+                style="@style/TextAppearance.NotificationSSH.TitleMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ssh_section_title"
+                android:textColor="?attr/colorOnSurface" />
+
+            <!-- Host -->
+            <TextView
+                style="@style/TextAppearance.NotificationSSH.BodyMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ssh_host"
+                android:layout_marginTop="10dp"
+                android:textColor="?attr/colorOnSurface" />
+
+            <EditText
+                android:id="@+id/edtHost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/ssh_host_hint"
+                android:inputType="textUri"
+                android:singleLine="true"
+                android:backgroundTint="?attr/colorOnSurface"
+                android:textColor="?attr/colorOnSurface"
+                android:textColorHint="?attr/colorOnSurface"
+                android:padding="10dp" />
+
+            <!-- Port + Username in row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextAppearance.NotificationSSH.BodyMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ssh_port"
+                        android:textColor="?attr/colorOnSurface" />
+
+                    <EditText
+                        android:id="@+id/edtPort"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/ssh_port_hint"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:backgroundTint="?attr/colorOnSurface"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textColorHint="?attr/colorOnSurface"
+                        android:padding="10dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="1dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextAppearance.NotificationSSH.BodyMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ssh_username"
+                        android:textColor="?attr/colorOnSurface" />
+
+                    <EditText
+                        android:id="@+id/edtUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/ssh_username_hint"
+                        android:inputType="textEmailAddress"
+                        android:singleLine="true"
+                        android:backgroundTint="?attr/colorOnSurface"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textColorHint="?attr/colorOnSurface"
+                        android:padding="10dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Password -->
+            <TextView
+                style="@style/TextAppearance.NotificationSSH.BodyMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ssh_password"
+                android:layout_marginTop="10dp"
+                android:textColor="?attr/colorOnSurface" />
+
+            <EditText
+                android:id="@+id/edtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/ssh_password_hint"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:backgroundTint="?attr/colorOnSurface"
+                android:textColor="?attr/colorOnSurface"
+                android:textColorHint="?attr/colorOnSurface"
+                android:padding="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/txtPasswordHint"
+                    style="@style/TextAppearance.NotificationSSH.BodyMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="?attr/colorOnSurface"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    tools:text="Password saved securely" />
+
+                <Button
+                    android:id="@+id/btnClearPassword"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/clear_password" />
+            </LinearLayout>
+
+            <!-- Command template -->
+            <TextView
+                style="@style/TextAppearance.NotificationSSH.BodyMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ssh_command_template"
+                android:layout_marginTop="10dp"
+                android:textColor="?attr/colorOnSurface" />
+
+            <EditText
+                android:id="@+id/edtCmdTemplate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/ssh_command_template_hint"
+                android:inputType="textMultiLine"
+                android:minLines="2"
+                android:maxLines="4"
+                android:backgroundTint="?attr/colorOnSurface"
+                android:textColor="?attr/colorOnSurface"
+                android:textColorHint="?attr/colorOnSurface"
+                android:padding="10dp" />
+
+        </LinearLayout>
+
+        <!-- Save Bar -->
+        <LinearLayout
+            android:id="@+id/barActions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end|center_vertical"
+            android:layout_marginTop="16dp">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="12dp"
+                android:layout_height="1dp" />
+
+            <Button
+                android:id="@+id/btnSave"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/save" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+    </LinearLayout>
+
+</ScrollView>

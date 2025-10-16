@@ -16,6 +16,11 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:label="@string/settings_title" />
+
         <!-- Notification Listener Service registration -->
         <service
             android:name=".service.NotifSshListenerService"

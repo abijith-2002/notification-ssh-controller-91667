@@ -1,27 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Base application theme using Material3 -->
+    <!-- Base application theme using Material3 and Ocean Professional -->
     <style name="Theme.NotificationSSH" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Color scheme -->
+        <!-- Brand colors -->
         <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
         <item name="colorPrimaryContainer">@color/primary_container</item>
-        <item name="colorSecondary">@color/secondary</item>
-        <item name="colorSecondaryContainer">@color/secondary_container</item>
-        <item name="colorError">@color/error</item>
-        <item name="android:statusBarColor">@color/surface</item>
-        <item name="android:navigationBarColor">@color/surface</item>
+        <item name="colorOnPrimaryContainer">@color/on_primary_container</item>
 
-        <!-- Typography -->
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+        <item name="colorSecondaryContainer">@color/secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/on_secondary_container</item>
+
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/on_error</item>
+
+        <!-- Light surfaces -->
+        <item name="android:windowBackground">@drawable/bg_gradient</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/on_surface</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/on_surface_variant</item>
+        <!-- Remove invalid colorBackground attr on some libraries; Material3 infers background from surface/window -->
+        <!-- Keeping onBackground only for text semantics -->
+        <item name="colorOnBackground">@color/on_background</item>
+
+        <!-- Typography: Reddit Sans app-wide -->
+        <item name="fontFamily">@font/reddit_sans</item>
+        <item name="android:fontFamily">@font/reddit_sans</item>
+
         <item name="textAppearanceBodyLarge">@style/TextAppearance.NotificationSSH.BodyLarge</item>
         <item name="textAppearanceBodyMedium">@style/TextAppearance.NotificationSSH.BodyMedium</item>
         <item name="textAppearanceTitleLarge">@style/TextAppearance.NotificationSSH.TitleLarge</item>
         <item name="textAppearanceTitleMedium">@style/TextAppearance.NotificationSSH.TitleMedium</item>
 
-        <!-- Surfaces -->
-        <item name="colorSurface">@color/surface</item>
-        <item name="colorOnSurface">@color/on_surface</item>
-        <item name="android:windowBackground">@color/background</item>
+        <!-- Buttons elevation/padding kept Material3 defaults; using expressive containers in layouts -->
+        <item name="android:statusBarColor">@color/surface</item>
+        <item name="android:navigationBarColor">@color/surface</item>
     </style>
 
     <!-- Typography styles referencing Reddit Sans -->

@@ -49,6 +49,7 @@
                 android:id="@+id/imgPermStatus"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
+                android:src="@drawable/ic_shield_check"
                 android:contentDescription="@string/notification_access_status_icon_desc"
                 app:tint="?attr/colorOnSurface" />
 
@@ -148,6 +149,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:drawableStart="@drawable/ic_settings"
                 android:text="@string/open_settings" />
 
             <View
@@ -160,6 +162,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:drawableStart="@drawable/ic_apps"
                 android:text="@string/open_app_selection" />
         </LinearLayout>
 

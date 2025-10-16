@@ -3,22 +3,22 @@
 
     <!-- UI titles/subtitles -->
     <string name="app_title">Notification SSH Controller</string>
-    <string name="app_subtitle">Run an SSH command when selected apps post notifications</string>
+    <string name="app_subtitle">Run an SSH command when selected apps post notifications.</string>
 
     <!-- Permission section -->
-    <string name="notification_access_title">Notification Access</string>
-    <string name="notif_access_granted">Granted</string>
-    <string name="notif_access_not_granted">Not granted</string>
+    <string name="notification_access_title">Notification access</string>
+    <string name="notif_access_granted">Access granted</string>
+    <string name="notif_access_not_granted">Access not granted</string>
     <string name="cta_grant_access">Grant access</string>
     <string name="cta_post_notifications">Allow local notifications</string>
     <string name="notification_access_status_icon_desc">Notification access status</string>
 
     <!-- Status text -->
     <string name="status_header">Status</string>
-    <string name="last_result_at">Last result: %1$s</string>
-    <string name="last_status_at">Last status: %1$s</string>
-    <string name="last_result_never">Last result: never</string>
-    <string name="last_status_never">Last status: never</string>
+    <string name="last_result_at">Last result • %1$s</string>
+    <string name="last_status_at">Last status • %1$s</string>
+    <string name="last_result_never">Last result • never</string>
+    <string name="last_status_never">Last status • never</string>
 
     <!-- Actions -->
     <string name="open_settings">Settings</string>
@@ -26,14 +26,14 @@
 
     <!-- Test SSH -->
     <string name="test_ssh_title">Test SSH</string>
-    <string name="test_ssh_hint">Runs your configured command. If password is missing, uses a safe fake SSH to simulate success.</string>
-    <string name="test_ssh">Test SSH</string>
+    <string name="test_ssh_hint">Runs your configured command. If no password is set, a safe simulation runs instead.</string>
+    <string name="test_ssh">Run test</string>
     <string name="test_ssh_success">Test command succeeded</string>
     <string name="test_ssh_failed">Test failed: %1$s</string>
 
     <!-- Service and channel strings -->
     <string name="service_name_notif_ssh_listener">Notification SSH Listener</string>
-    <string name="channel_name_results">SSH Results</string>
+    <string name="channel_name_results">SSH results</string>
     <string name="channel_desc_results">Status updates for SSH command executions</string>
 
     <!-- Local notification summary text -->
@@ -48,30 +48,30 @@
     <string name="ssh_status_incomplete_body">Missing host, username, password, or template</string>
 
     <!-- Settings -->
-    <string name="settings_title">SSH Settings</string>
-    <string name="settings_subtitle">Configure server connection and command template</string>
-    <string name="ssh_section_title">Server &amp; Authentication</string>
+    <string name="settings_title">SSH settings</string>
+    <string name="settings_subtitle">Configure server connection and command template.</string>
+    <string name="ssh_section_title">Server &amp; authentication</string>
     <string name="ssh_host">Host</string>
-    <string name="ssh_host_hint">e.g., 192.168.1.10 or server.local</string>
+    <string name="ssh_host_hint">e.g. 192.168.1.10 or server.local</string>
     <string name="ssh_port">Port</string>
     <string name="ssh_port_hint">22</string>
     <string name="ssh_username">Username</string>
-    <string name="ssh_username_hint">e.g., ubuntu</string>
+    <string name="ssh_username_hint">e.g. ubuntu</string>
     <string name="ssh_password">Password</string>
     <string name="ssh_password_hint">Enter password (stored securely)</string>
     <string name="clear_password">Clear</string>
     <string name="password_saved_hint">Password saved securely</string>
     <string name="password_not_set_hint">No password saved</string>
     <string name="ssh_command_template">Command template</string>
-    <string name="ssh_command_template_hint">Supported placeholders: package | title | text | postTime</string>
+    <string name="ssh_command_template_hint">Placeholders: ${package}, ${title}, ${text}, ${postTime}</string>
     <string name="save">Save</string>
     <string name="settings_saved">Settings saved</string>
     <string name="settings_save_failed">Failed to save settings</string>
     <string name="password_cleared">Password cleared</string>
 
     <!-- App selection -->
-    <string name="app_selection_title">Select Apps</string>
-    <string name="app_selection_subtitle">Choose which apps to monitor for notifications</string>
+    <string name="app_selection_title">Select apps</string>
+    <string name="app_selection_subtitle">Choose which apps to monitor for notifications.</string>
     <string name="search_hint">Search apps</string>
     <string name="clear">Clear</string>
     <string name="apply">Apply</string>

@@ -3,7 +3,7 @@
 
     <!-- UI titles/subtitles -->
     <string name="app_title">Notification SSH Controller</string>
-    <string name="app_subtitle">Run an SSH command when selected apps post notifications.</string>
+    <string name="app_subtitle">Run an SSH command automatically when your selected apps post notifications.</string>
 
     <!-- Permission section -->
     <string name="notification_access_title">Notification access</string>

@@ -67,7 +67,6 @@
                 android:hint="@string/ssh_host_hint"
                 android:inputType="textUri"
                 android:singleLine="true"
-                android:backgroundTint="?attr/colorOnSurface"
                 android:textColor="?attr/colorOnSurface"
                 android:textColorHint="?attr/colorOnSurface"
                 android:padding="12dp" />
@@ -99,7 +98,6 @@
                         android:hint="@string/ssh_port_hint"
                         android:inputType="number"
                         android:singleLine="true"
-                        android:backgroundTint="?attr/colorOnSurface"
                         android:textColor="?attr/colorOnSurface"
                         android:textColorHint="?attr/colorOnSurface"
                         android:padding="12dp" />
@@ -129,7 +127,6 @@
                         android:hint="@string/ssh_username_hint"
                         android:inputType="textEmailAddress"
                         android:singleLine="true"
-                        android:backgroundTint="?attr/colorOnSurface"
                         android:textColor="?attr/colorOnSurface"
                         android:textColorHint="?attr/colorOnSurface"
                         android:padding="12dp" />
@@ -152,7 +149,6 @@
                 android:hint="@string/ssh_password_hint"
                 android:inputType="textPassword"
                 android:singleLine="true"
-                android:backgroundTint="?attr/colorOnSurface"
                 android:textColor="?attr/colorOnSurface"
                 android:textColorHint="?attr/colorOnSurface"
                 android:padding="12dp" />
@@ -200,7 +196,6 @@
                 android:inputType="textMultiLine"
                 android:minLines="2"
                 android:maxLines="4"
-                android:backgroundTint="?attr/colorOnSurface"
                 android:textColor="?attr/colorOnSurface"
                 android:textColorHint="?attr/colorOnSurface"
                 android:padding="12dp" />

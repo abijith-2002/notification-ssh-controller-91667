@@ -18,12 +18,13 @@
         <item name="colorOnError">@color/on_error</item>
 
         <!-- Light surfaces -->
-        <item name="android:windowBackground">@drawable/bg_gradient</item>
+        <!-- Use a solid background for compatibility; layouts can still set gradient drawables explicitly -->
+        <item name="android:windowBackground">@color/background</item>
         <item name="colorSurface">@color/surface</item>
         <item name="colorOnSurface">@color/on_surface</item>
         <item name="colorSurfaceVariant">@color/surface_variant</item>
         <item name="colorOnSurfaceVariant">@color/on_surface_variant</item>
-        <item name="colorOnBackground">@color/on_background</item>
+        <item name="android:colorBackground">@color/background</item>
 
         <!-- Typography: Reddit Sans app-wide -->
         <item name="fontFamily">@font/reddit_sans</item>

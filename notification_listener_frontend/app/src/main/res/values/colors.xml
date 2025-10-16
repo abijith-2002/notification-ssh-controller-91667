@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Ocean Professional palette -->
+    <!-- Ocean Professional palette (Material 3 expressive roles) -->
     <color name="primary">#2563EB</color> <!-- Blue 600 -->
     <color name="on_primary">#FFFFFF</color>
-    <color name="secondary">#F59E0B</color> <!-- Amber 500 (success/accent) -->
+    <color name="secondary">#F59E0B</color> <!-- Amber 500 (accent) -->
     <color name="on_secondary">#111827</color>
     <color name="error">#EF4444</color>
     <color name="on_error">#FFFFFF</color>

@@ -2,7 +2,7 @@
 <resources>
 
     <style name="Theme.NotificationSSH" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Dark scheme brand colors -->
+        <!-- Dark scheme brand colors (expressive) -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorOnPrimary">@color/on_primary</item>
         <item name="colorPrimaryContainer">@color/primary_container_dark</item>
@@ -24,7 +24,7 @@
         <item name="colorOnSurfaceVariant">@color/on_surface_variant_dark</item>
         <item name="colorOnBackground">@color/on_background_dark</item>
 
-        <!-- Typography stays Reddit Sans -->
+        <!-- Typography: Reddit Sans -->
         <item name="fontFamily">@font/reddit_sans</item>
         <item name="android:fontFamily">@font/reddit_sans</item>
 

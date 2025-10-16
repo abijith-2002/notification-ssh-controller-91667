@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Base application theme using Material3 and Ocean Professional -->
+    <!-- Base application theme using Material3 with expressive look -->
     <style name="Theme.NotificationSSH" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Brand colors (Ocean Professional) -->
+        <!-- Brand roles (Ocean Professional) -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorOnPrimary">@color/on_primary</item>
         <item name="colorPrimaryContainer">@color/primary_container</item>
@@ -35,7 +35,7 @@
         <item name="textAppearanceTitleLarge">@style/TextAppearance.NotificationSSH.TitleLarge</item>
         <item name="textAppearanceTitleMedium">@style/TextAppearance.NotificationSSH.TitleMedium</item>
 
-        <!-- System bars -->
+        <!-- System bars (keep minimal to avoid unsupported attributes on older APIs) -->
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@color/surface</item>
     </style>

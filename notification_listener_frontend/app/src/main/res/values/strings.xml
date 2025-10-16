@@ -77,4 +77,10 @@
     <string name="apply">Apply</string>
     <string name="selected_count">%1$d selected</string>
     <string name="app_icon_desc">App icon</string>
+
+    <!-- Runtime POST_NOTIFICATIONS feedback -->
+    <string name="post_notif_denied">Permission denied. You can enable it in App settings to allow local status notifications.</string>
+    <string name="post_notif_granted">Permission granted</string>
+    <string name="post_notif_already_granted">Already allowed</string>
+    <string name="post_notif_not_required">Not required on this Android version</string>
 </resources>

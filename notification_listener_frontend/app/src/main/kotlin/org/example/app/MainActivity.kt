@@ -172,7 +172,11 @@ class MainActivity : Activity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (needsPostNotificationsPermission()) {
                 requestPermissions(arrayOf(Manifest.permission.POST_NOTIFICATIONS), REQ_POST_NOTIFICATIONS)
+            } else {
+                android.widget.Toast.makeText(this, R.string.post_notif_already_granted, android.widget.Toast.LENGTH_SHORT).show()
             }
+        } else {
+            android.widget.Toast.makeText(this, R.string.post_notif_not_required, android.widget.Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -181,6 +185,12 @@ class MainActivity : Activity() {
         if (requestCode == REQ_POST_NOTIFICATIONS) {
             // Update UI regardless of grant/deny
             refreshPermissionUi()
+            val granted = !needsPostNotificationsPermission()
+            if (!granted) {
+                android.widget.Toast.makeText(this, R.string.post_notif_denied, android.widget.Toast.LENGTH_LONG).show()
+            } else {
+                android.widget.Toast.makeText(this, R.string.post_notif_granted, android.widget.Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

@@ -194,10 +194,8 @@ class MainActivity : Activity() {
     }
 
     private fun openAppSelectionActivity() {
-        // Placeholder: navigate to AppSelectionActivity if implemented; fall back to app details
         try {
-            val intent = Intent(this, Class.forName("org.example.app.AppSelectionActivity"))
-            startActivity(intent)
+            startActivity(Intent(this, AppSelectionActivity::class.java))
         } catch (_: Exception) {
             openAppDetails()
         }

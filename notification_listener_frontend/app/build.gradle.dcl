@@ -15,6 +15,9 @@ androidApplication {
         // Lifecycle ViewModel KTX
         implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.6")
 
+        // RecyclerView for app list
+        implementation("androidx.recyclerview:recyclerview:1.3.2")
+
         // DataStore Preferences for lightweight settings storage
         implementation("androidx.datastore:datastore-preferences:1.1.1")
 

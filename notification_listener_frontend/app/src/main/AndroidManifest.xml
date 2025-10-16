@@ -21,6 +21,11 @@
             android:exported="false"
             android:label="@string/settings_title" />
 
+        <activity
+            android:name=".AppSelectionActivity"
+            android:exported="false"
+            android:label="@string/app_selection_title" />
+
         <!-- Notification Listener Service registration -->
         <service
             android:name=".service.NotifSshListenerService"

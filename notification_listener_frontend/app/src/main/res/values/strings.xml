@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Sample Declarative Gradle Android App</string>
+
+    <!-- Service and channel strings -->
+    <string name="service_name_notif_ssh_listener">Notification SSH Listener</string>
+    <string name="channel_name_results">SSH Results</string>
+    <string name="channel_desc_results">Status updates for SSH command executions</string>
+
+    <!-- Local notification summary text -->
+    <string name="ssh_result_success_title">SSH command executed</string>
+    <string name="ssh_result_success_body">Command completed successfully</string>
+    <string name="ssh_result_failure_title">SSH command failed</string>
+    <string name="ssh_result_failure_body">Error: %1$s</string>
+    <string name="ssh_result_unknown_error">Unknown error</string>
+
+    <!-- Incomplete configuration notice -->
+    <string name="ssh_status_incomplete_title">SSH not configured</string>
+    <string name="ssh_status_incomplete_body">Missing host, username, password, or template</string>
 </resources>

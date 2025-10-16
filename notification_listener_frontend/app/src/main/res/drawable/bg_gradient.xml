@@ -5,7 +5,6 @@
     <!-- Subtle top-to-bottom gradient overlay -->
     <item>
         <shape android:shape="rectangle">
-            <!-- Note: XML comments cannot be inside a tag's attribute list -->
             <gradient
                 android:startColor="#1A2563EB"
                 android:endColor="#00F9FAFB"

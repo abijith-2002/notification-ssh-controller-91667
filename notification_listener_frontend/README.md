@@ -1,21 +1,49 @@
-# declarative-samples-android-app
-A sample Android application written in the Declarative Gradle DSL, using the prototype Declarative Gradle `androidApplication` Software Type defined in the `org.gradle.experimental.android-ecosystem` ecosystem plugin.
+# Notification SSH Controller (Android)
 
-## Building and Running
+An Android app that listens to device notifications and triggers an SSH command based on user configuration. Users can configure SSH host details and select which apps' notifications should be monitored.
 
-This sample shows the definition of a multiproject Android application implemented using Kotlin 2.0.21 source code.
-The project is the result of reproducing the project produced by the `gradle init` command in Gradle 8.9 as an Android project.
+## Design and Theme
 
-To build the project without running, use:
+- Material 3 DayNight theme with Ocean Professional palette:
+  - Primary: #2563EB
+  - Secondary/Accent: #F59E0B
+  - Error: #EF4444
+- Reddit Sans applied across the app via theme typography overrides.
+- Subtle gradient window background in light mode; expressive container surfaces with proper state layers.
 
+## Build and Run
+
+Build all modules:
 ```shell
-  ./gradlew build
+./gradlew build
 ```
 
-To run the application, first install it on a connected Android device using:
-
+Install debug build on a connected device/emulator:
 ```shell
-  :app:installDebug
+./gradlew :app:installDebug
 ```
 
-Then search for "Sample Declarative Gradle Android App" and launch app to see a hello world message.
+Launch "Notification SSH Controller" on the device.
+
+## Permissions
+
+- Notification Listener permission: Required for listening to notifications. Grant in system settings via the prompt in the app.
+- Post Notifications (Android 13+): Optional, only for local status notifications.
+- No Internet permission is explicitly declared because SSH library uses sockets; ensure network access is available on the device.
+
+## Security Notes
+
+- Password is stored with AndroidX Security Crypto (AES256_GCM) using EncryptedSharedPreferences.
+- No secrets are logged. Error messages are sanitized.
+- SSH host key checking is currently disabled (StrictHostKeyChecking=no) for MVP. Do not use with untrusted servers. See TODO in SshClient for hardening steps.
+- Consider locking your device; an optional “run only when unlocked” flag is persisted via DataStore.
+
+## Project Structure
+
+- app: Android application module (activities, service, data, ssh).
+- utilities, list: Sample library modules used by the app.
+
+## Troubleshooting
+
+- If you see UI text not using Reddit Sans, ensure the bundled font files exist under app/src/main/res/font and that the theme is Theme.NotificationSSH.
+- On Android 13+, if you do not see local status notifications, grant the "Allow local notifications" permission from the main screen.

@@ -3,7 +3,7 @@
 
     <!-- Base application theme using Material3 and Ocean Professional -->
     <style name="Theme.NotificationSSH" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Brand colors -->
+        <!-- Brand colors (Ocean Professional) -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorOnPrimary">@color/on_primary</item>
         <item name="colorPrimaryContainer">@color/primary_container</item>
@@ -23,21 +23,20 @@
         <item name="colorOnSurface">@color/on_surface</item>
         <item name="colorSurfaceVariant">@color/surface_variant</item>
         <item name="colorOnSurfaceVariant">@color/on_surface_variant</item>
-        <!-- Remove invalid colorBackground attr on some libraries; Material3 infers background from surface/window -->
-        <!-- Keeping onBackground only for text semantics -->
         <item name="colorOnBackground">@color/on_background</item>
 
         <!-- Typography: Reddit Sans app-wide -->
         <item name="fontFamily">@font/reddit_sans</item>
         <item name="android:fontFamily">@font/reddit_sans</item>
 
+        <!-- Material 3 default text appearances overridden to our Reddit Sans variants -->
         <item name="textAppearanceBodyLarge">@style/TextAppearance.NotificationSSH.BodyLarge</item>
         <item name="textAppearanceBodyMedium">@style/TextAppearance.NotificationSSH.BodyMedium</item>
         <item name="textAppearanceTitleLarge">@style/TextAppearance.NotificationSSH.TitleLarge</item>
         <item name="textAppearanceTitleMedium">@style/TextAppearance.NotificationSSH.TitleMedium</item>
 
-        <!-- Buttons elevation/padding kept Material3 defaults; using expressive containers in layouts -->
-        <item name="android:statusBarColor">@color/surface</item>
+        <!-- System bars -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@color/surface</item>
     </style>
 

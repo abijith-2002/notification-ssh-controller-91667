@@ -22,7 +22,6 @@
         <item name="colorOnSurface">@color/on_surface_dark</item>
         <item name="colorSurfaceVariant">@color/surface_variant_dark</item>
         <item name="colorOnSurfaceVariant">@color/on_surface_variant_dark</item>
-        <!-- Do not set colorBackground to avoid missing attr issues; rely on window/surface -->
         <item name="colorOnBackground">@color/on_background_dark</item>
 
         <!-- Typography stays Reddit Sans -->

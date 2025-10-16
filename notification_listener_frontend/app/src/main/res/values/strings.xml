@@ -1,5 +1,35 @@
 <resources>
-    <string name="app_name">Sample Declarative Gradle Android App</string>
+    <string name="app_name">Notification SSH Controller</string>
+
+    <!-- UI titles/subtitles -->
+    <string name="app_title">Notification SSH Controller</string>
+    <string name="app_subtitle">Run an SSH command when selected apps post notifications</string>
+
+    <!-- Permission section -->
+    <string name="notification_access_title">Notification Access</string>
+    <string name="notif_access_granted">Granted</string>
+    <string name="notif_access_not_granted">Not granted</string>
+    <string name="cta_grant_access">Grant access</string>
+    <string name="cta_post_notifications">Allow local notifications</string>
+    <string name="notification_access_status_icon_desc">Notification access status</string>
+
+    <!-- Status text -->
+    <string name="status_header">Status</string>
+    <string name="last_result_at">Last result: %1$s</string>
+    <string name="last_status_at">Last status: %1$s</string>
+    <string name="last_result_never">Last result: never</string>
+    <string name="last_status_never">Last status: never</string>
+
+    <!-- Actions -->
+    <string name="open_settings">Settings</string>
+    <string name="open_app_selection">Select apps</string>
+
+    <!-- Test SSH -->
+    <string name="test_ssh_title">Test SSH</string>
+    <string name="test_ssh_hint">Runs your configured command. If password is missing, uses a safe fake SSH to simulate success.</string>
+    <string name="test_ssh">Test SSH</string>
+    <string name="test_ssh_success">Test command succeeded</string>
+    <string name="test_ssh_failed">Test failed: %1$s</string>
 
     <!-- Service and channel strings -->
     <string name="service_name_notif_ssh_listener">Notification SSH Listener</string>
